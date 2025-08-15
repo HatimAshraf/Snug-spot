@@ -14,7 +14,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Ticket {
+model Task {
   id          Int      @id @default(autoincrement())
   subject     String
   description String
