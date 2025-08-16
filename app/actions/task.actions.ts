@@ -16,7 +16,7 @@ export async function createTask(prevState: {success: boolean, message: string},
       message: 'Please fill all the fields',
     }
   }
-  // Create Task
+  // Create a Task
   const task = await prisma.task.create({
     data: {
       subject,
@@ -45,4 +45,18 @@ export async function createTask(prevState: {success: boolean, message: string},
     }
   }
 
+}
+
+export async function getTask(){
+  try {
+    const tasks = await prisma.task.findMany({
+      orderBy: {
+        createdAt: 'desc',
+      },
+    });
+
+    return tasks;
+  } catch (error) {
+    throw error;
+  }
 }
