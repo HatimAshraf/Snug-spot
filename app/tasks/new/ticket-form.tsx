@@ -45,9 +45,9 @@ function TaskFormPage() {
           defaultValue='low'
           className='w-full p-2 rounded border text-white border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400'
         >
-          <option value='low'>Low Priorty</option>
-          <option value='medium'>Medium Priority</option>
-          <option value='high'>High Priority</option>
+          <option value='Low'>Low Priorty</option>
+          <option value='Medium'>Medium Priority</option>
+          <option value='High'>High Priority</option>
         </select>
 
         {/* add a due date */}

@@ -14,7 +14,7 @@ export async function createTask(prevState: {success: boolean, message: string},
     return{
       success: false,
       message: 'Please fill all the fields',
-    }
+    };
   }
   // Create a Task
   const task = await prisma.task.create({
@@ -22,13 +22,14 @@ export async function createTask(prevState: {success: boolean, message: string},
       subject,
       description,
       priority,
-    }
-  })
+    },
+  });
   sentry.addBreadcrumb({
     category: 'task',
     message: `Task created: ${task.id}`,
     level: 'info',
-  })
+  }
+)
 
   sentry.captureMessage(`Task created successfully: ${task.id}`);
 
@@ -56,6 +57,19 @@ export async function getTask(){
     });
 
     return tasks;
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function getTaskById(id: string) {
+  try {
+    const task = await prisma.task.findUnique({
+      where: {
+        id: Number(id),
+      },
+    });
+    return task;
   } catch (error) {
     throw error;
   }
