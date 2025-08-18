@@ -27,7 +27,7 @@ const TaskDetailsPage = async (props: { params: Promise<{ id: string }> }) => {
         </div>
         <Link
           href='/view'
-          className='inline-block mt-2 bg-blue-600 text-white text-sm px-3 py-1 rounded hover:bg-blue-700 transition text-center'
+          className='inline-block mt-2 bg-blue-600 text-white text-sm px-4 py-2 rounded hover:bg-blue-700 transition text-center'
         >
           Back to Tasks
         </Link>

@@ -20,7 +20,7 @@ function TaskFormPage() {
 
   return (
     <div className='w-full max-w-md p-8 border rounded-lg'>
-      <h1 className='text-2xl font-bold mb-6 text-center bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent capitalize'>
+      <h1 className='text-2xl font-bold mb-6 text-center text-white capitalize'>
         Submit a New Task
       </h1>
       {state.message && !state.success && (

@@ -6,7 +6,7 @@ async function ViewTaskPage() {
   const Tasks = await getTask();
   return (
     <div className='min-h-screen bg-gradient-to-br from-gray-900 to-slate-800 p-8'>
-      <h1 className='text-3xl font-bold text-blue-600 mb-8 text-center'>
+      <h1 className='text-3xl font-bold text-white mb-8 text-center'>
         All The Tasks
       </h1>
       {Tasks.length === 0 ? (
@@ -21,7 +21,7 @@ async function ViewTaskPage() {
               className='flex justify-between items-center border rounded-lg shadow p-6'
             >
               <div>
-                <h2 className='text-xl text-blue-600 font-semibold'>
+                <h2 className='text-xl text-white font-semibold'>
                   {task.subject}
                 </h2>
               </div>
@@ -34,7 +34,7 @@ async function ViewTaskPage() {
                 </div>
                 <Link
                   href={`/view/${task.id}`}
-                  className='inline-block mt-2 bg-blue-600 text-white text-sm px-3 py-1 rounded hover:bg-blue-700 transition text-center'
+                  className='inline-block mt-2 bg-blue-600 text-white text-sm px-4 py-2 rounded hover:bg-blue-700 transition text-center'
                 >
                   View Task
                 </Link>

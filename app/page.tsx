@@ -6,7 +6,7 @@ const HomePage = () => {
     <main className='flex flex-col text-center items-center justify-center min-h-screen px-4 bg-gradient-to-br from-gray-900 to-slate-800'>
       <h1 className='text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent uppercase'>
         <FaForumbee className='text-blue-400 size-10 mb-2' />
-        Welcome to Bee's Support
+        Welcome to SupportBee
       </h1>
       <p className='text-xl text-gray-300 mb-12 max-w-lg'>
         Quick and easy support task management system
