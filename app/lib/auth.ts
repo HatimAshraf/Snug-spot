@@ -28,16 +28,35 @@ export async function verifyAuthToken<T>(token:string):Promise<T>{
 }
 
 export async function setAuthCookie(token:string){
-  const cookieStore = await cookies()
-  cookies().set(cookiename, token, {
+  try {
+    const cookieStore = await cookies()
+    cookieStore.set(cookiename, token, {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
     sameSite: 'lax',
     maxAge: 60 * 60 * 24 * 7,
     path: '/',
   });
+  } catch (error) {
+    throw new Error('Failed to set auth cookie' + error);
+  }
 }
 
 export async function getAuthCookie(){
-  return cookies().get(cookiename)?.value;
+  try {
+    const cookieStore = await cookies();
+    const token = cookieStore.get(cookiename)?.value;
+    return token;
+  } catch (error) {
+    throw new Error('Failed to get auth cookie' + error);
+  }
+}
+
+export async function removeAuthCookie(){
+  try {
+    const cookieStore = await cookies();
+    cookieStore.delete(cookiename);
+  } catch (error) {
+    throw new Error('Failed to remove auth cookie' + error);
+  }
 }
