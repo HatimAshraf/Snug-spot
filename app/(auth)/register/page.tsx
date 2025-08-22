@@ -10,7 +10,9 @@ function RegistrationPage() {
   };
   const [state, formAction] = useActionState(registerUser, initialState);
 
-  return <div>RegistrationPage</div>;
+  return <div>
+    <h1>RegistrationPage</h1>
+  </div>;
 }
 
 export default RegistrationPage;
